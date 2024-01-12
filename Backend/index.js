@@ -13,6 +13,10 @@ const app = express();
 // Config env
 connectDB();
 
+// https://shoppe-ecom.vercel.app
+
+// https://inspiring-concha-7c4744.netlify.app/
+
 app.use(express.static('public'))
 
 // Middlewares
