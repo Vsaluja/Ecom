@@ -1,5 +1,5 @@
 import express from 'express';
-import { loginUser, registerUser } from './userControllers.js';
+import { loginUser, registerUser, updateDetails } from './userControllers.js';
 import { isAdmin, requireSignIn, userDetails } from './userMiddlewares.js';
 import { getCart, setCart } from './cartControllers.js';
 
@@ -25,6 +25,8 @@ router.post('/getcart', getCart);
 
 router.post('/setcart', setCart);
 
+// Update details
+router.post('/update', updateDetails);
 
 
 export default router;

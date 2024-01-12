@@ -87,7 +87,7 @@ const Navbar = () => {
 
                     <IoMdClose className={`${search ? "block" : "hidden"}`} onClick={handleSearch} />
                 </div>
-                <div className={`navItems lg:flex items-center gap-4 lg:gap-10 ${mobile ? "anim flex absolute flex-col top-[70px] w-full left-0 bg-white  items-center justify-center object-bottom min-h-10 p-6 border-b-2" : "hidden"}`}>
+                <div className={`navItems lg:flex items-center gap-4 lg:gap-10 ${mobile ? "anim flex absolute flex-col top-[70px] w-full left-0 bg-white  items-center justify-center object-bottom min-h-10 p-6 border-b-2 z-50" : "hidden"}`}>
 
                     <div className={`flex justify-center items-center gap-4 ${mobile ? "flex-col" : ""}`}>
                         <Link to="/category/all/mens" className='text-lg lg:font-semibold hover:text-[#212121] text-gray-700 duration-300'>Men</Link>
@@ -99,9 +99,15 @@ const Navbar = () => {
                             <CgProfile className=' text-2xl lg:text-2xl text-gray-700 cursor-pointer' />
                             <h3 className='capitalize cursor-pointer'>{user?.user.firstName}</h3>
                             <IoIosArrowDropdownCircle className='cursor-pointer' />
-                            <div className="content hidden absolute w-32 min-h-20 bg-white top-6 left-0 flex flex-col items-center justify-center pt-10 pb-4 text-center gap-2">
-                                {user?.user?.role && (
-                                    <Link to={`/dashboard/${user?.user?.role ? "admin" : "user"}`} className='text-md'>Dashboard</Link>
+                            <div className="content hidden absolute  w-[180px] border-2 border-t-0 min-h-20 bg-white top-6 left-[-30px] flex flex-col items-center justify-center pt-10 pb-4 text-center gap-6 font-bold">
+                                {user?.user?.role ? (
+                                    <>
+                                        <Link to={`/dashboard/user/orders`} className=' text-md'>Profile</Link>
+                                        <Link to={`/dashboard/admin`} className='text-md'>Admin Panel</Link>
+                                    </>
+                                ) : (
+
+                                    <Link to={`/dashboard/user`} className='text-md'>Profile</Link>
                                 )}
                                 <button className='text-md text-red-600' onClick={handleLogout}>Logout</button>
                             </div>

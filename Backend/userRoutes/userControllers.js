@@ -84,7 +84,7 @@ export const loginUser = async (req, res) => {
         const match = await bcrypt.compare(password, user.password);
 
         if (!match) {
-            res.status(200).send({
+            return res.status(200).send({
                 success: false,
                 message: "Invalid login credentials"
             })
@@ -114,5 +114,34 @@ export const loginUser = async (req, res) => {
             error
         })
     }
+
+}
+
+export const updateDetails = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        const newPassword = await bcrypt.hash(password, 8);
+
+
+        const update = await User.findOneAndUpdate({ email }, { password: newPassword });
+
+
+        res.status(200).send({
+            success: true,
+            message: "Details updated successfully"
+        })
+
+    } catch (error) {
+        console.log("Error while updating details", error);
+        res.status(500).send({
+            success: false,
+            message: "There was an error updating the details",
+            error: error
+        })
+    }
+
+
+
 
 }

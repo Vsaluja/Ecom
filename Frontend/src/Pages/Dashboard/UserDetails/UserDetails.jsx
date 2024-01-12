@@ -20,10 +20,10 @@ const UserDetails = () => {
     }, [])
 
     return (
-        <div className='flex-1 bg-[color:var(--admin-body-bg)] py-5'>
-            <Container className={`relative min-h-full `}>
+        <div className='flex-1 flex bg-[color:var(--admin-body-bg)] py-5'>
+            <Container className={`relative min-h-full flex px-4`}>
                 <AdminNav />
-                <div className="box text-white min-h-full rounded-2xl flex flex-col gap-4 shadow-2xl my-10 lg:m-10 lg:p-10 ">
+                <div className="box text-white w-full min-h-full rounded-2xl flex flex-col gap-4 my-10 lg:m-10 lg:p-10 ">
 
 
                     <div className='my-10 w-full px-10 border-b-4 border-black py-6 flex justify-between items-center'>

@@ -101,12 +101,12 @@ const Cart = () => {
                                             <div onClick={() => dispatch(removeFromCart(product.id))} className="removeIcon absolute right-[10px] top-[5px] text-gray-600 cursor-pointer">
                                                 <FaTrashAlt />
                                             </div>
-                                            <Link to={`/display/${product.id}`} className="left flex justify-start w-full gap-2 md:gap-6  ">
-                                                <div className="image max-w-[100px]">
+                                            <div className="left flex justify-start w-full gap-2 md:gap-6  ">
+                                                <Link to={`/display/${product.id}`} className="image max-w-[100px]">
                                                     <img className='min-w-[100px] rounded' src={`/products/${product.image}`} alt="" />
-                                                </div>
-                                                <div className="me-2 md:max-w-[300px] flex flex-col gap-[5px]">
-                                                    <h2 className=' md:min-w-[300px] prodName capitalize'>{product.name}</h2>
+                                                </Link>
+                                                <div className="me-2  flex flex-col gap-[5px]">
+                                                    <h2 className='  prodName capitalize'>{product.name}</h2>
                                                     <h2 className='text-[color:var(--ecom-text-bg)] text-[16px]'>${product.price.orgPrice}</h2>
                                                     <div className="categories flex gap-2 capitalize text-[13px] text-gray-400">
                                                         <h2>{product.subCategory}, </h2>
@@ -114,11 +114,11 @@ const Cart = () => {
                                                     </div>
                                                     <div className="flex gap-6 ms-4 md:hidden">
                                                         <button onClick={() => handleReduce(product.id)}>-</button>
-                                                        <p className='bg-gray-400 p-2'>{product.quantity}</p>
+                                                        <p className='bg-gray-300 px-2 rounded mt-2'>{product.quantity}</p>
                                                         <button onClick={() => handleAdd(product)}>+</button>
                                                     </div>
                                                 </div>
-                                            </Link>
+                                            </div>
                                             <div className="qty hidden md:flex justify-between gap-4">
                                                 <button onClick={() => handleReduce(product.id)}>-</button>
                                                 <p className='bg-gray-300 py-[2px] px-[12px] rounded w-full max-w-[40px] mx-2 text-center'>{product.quantity}</p>
@@ -156,8 +156,8 @@ const Cart = () => {
                     </div >
 
                 </Container >
-            ) : (<div className='emptyCart h-[500px] flex justify-center w-full'>
-                <img className='max-w-[1000px]' src={emptyCart} alt="" />
+            ) : (<div className='emptyCart w-full md:flex items-center'>
+                <img className='w-full max-w-[800px] mx-auto' src={emptyCart} alt="" />
             </div>)}
         </div >
     )

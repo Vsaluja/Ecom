@@ -13,7 +13,6 @@ import { setAllUsers, setAuth } from './Store/AuthSlice';
 import Cart from './Pages/Cart/Cart';
 import Auth from './Auth/Auth';
 import AdminDashboard from './Pages/Dashboard/AdminDashboard';
-import UserDashboard from './Pages/Dashboard/UserDashboard';
 import Category from './Pages/Category/Category';
 import axios from 'axios';
 import { setCart, setProducts } from './Store/ProductsSlice';
@@ -26,6 +25,9 @@ import UserAuth from './Auth/UserAuth';
 import ProductDisplay from './Pages/ProductDisplay/ProductDisplay';
 import Success from './Pages/Payment/Success';
 import Cancel from './Pages/Payment/Cancel';
+import UserDashboard from './Pages/Dashboard/UserDashboard/UserDashboard';
+import Settings from './Pages/Dashboard/UserDashboard/Settings/Settings';
+import Orders from './Pages/Dashboard/UserDashboard/Orders/Orders';
 
 // make the div flex and make the child of that div flex-1/flex-grow so that the child will take up entire remaining space no need to use height 100%
 
@@ -158,6 +160,8 @@ const App = () => {
         {/* Whichever route user wants to go they have to go through Auth and then Auth will direct them to that route */}
         <Route path='/dashboard' element={<UserAuth />}>
           <Route path='user' element={<UserDashboard />} />
+          <Route path='user/orders' element={<Orders />} />
+          <Route path='user/settings' element={<Settings />} />
         </Route>
         <Route path='/dashboard' element={<Auth />}>
           <Route path='admin' element={<AdminDashboard />} />

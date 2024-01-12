@@ -16,10 +16,10 @@ const ProductDetails = () => {
 
 
     return (
-        <div className='flex-1 bg-[color:var(--admin-body-bg)] py-5'>
-            <Container className={`relative min-h-full`}>
+        <div className='flex-1 flex bg-[color:var(--admin-body-bg)] py-5'>
+            <Container className={`relative flex`}>
                 <AdminNav />
-                <div className="box relative bg-white  min-h-full rounded-2xl flex flex-col gap-4 shadow-2xl m-2 md:m-4 lg:m-10 lg:p-10">
+                <div className="box relative bg-white  min-h-full rounded-2xl flex flex-col gap-4  m-2 md:m-4 lg:m-10 lg:p-10">
 
                     <Link className='absolute text-sm top-[60px] right-[10px] lg:top-[10px] lg:right-[10px] p-2 text-white bg-black rounded' to='/dashboard/admin/productdetails/add'>Add Product</Link>
 

@@ -1,5 +1,10 @@
 @import '../../../mixins.scss';
 
+
 .name {
     @include ellipsis(3);
+}
+
+.box {
+    box-shadow: 5px 10px 20px black;
 }

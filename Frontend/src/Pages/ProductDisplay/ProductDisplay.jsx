@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 import { addToCart, reduceFromCart } from '../../Store/ProductsSlice';
+import { toast } from 'react-toastify';
 
 const ProductDisplay = () => {
 
-    const { products } = useSelector((state) => state.products);
-
+    const { products, cart } = useSelector((state) => state.products);
 
     const { id } = useParams();
     const [product, setProduct] = useState();
     const [btn, setBtn] = useState(false);
-
+    const [qty, setQty] = useState();
 
     const dispatch = useDispatch();
 
@@ -24,18 +24,40 @@ const ProductDisplay = () => {
         setProduct(result);
     }
 
+    const findQty = () => {
+
+
+        const quantity = cart?.find((item) => {
+            return item.id === product?.id;
+        })
+
+        setQty(quantity?.quantity);
+        if (qty > 1) {
+            setBtn(true);
+        }
+
+    }
+
 
 
     const handleAdd = () => {
         // Providing the entire product json obj
         dispatch(addToCart(product));
+        setBtn(true);
     }
 
     const handleReduce = () => {
         // Only providing the id
+        if (qty == 1) {
+            console.log("Hit ");
+            setBtn(false)
+        }
+
         dispatch(reduceFromCart(product.id))
 
     }
+
+
 
 
     useEffect(() => {
@@ -43,6 +65,10 @@ const ProductDisplay = () => {
 
 
     }, [products, id])
+
+    useEffect(() => {
+        findQty();
+    }, [product, cart, qty])
 
 
     return (
@@ -61,15 +87,15 @@ const ProductDisplay = () => {
                         {product?.description}
                     </div>
                     <div className="addToCart flex flex-col gap-8 w-[150px]">
-                        <button onClick={() => { handleAdd(); }} className='bg-[#DF3535]  hover:bg-red-600 duration-200 text-white py-4 rounded-2xl mt-4 px-4 w-[150px]'>Add To Cart</button>
-                        {/* {btn && (
+                        <button onClick={() => { toast.success("Added to cart"); handleAdd(); }} className='bg-[#DF3535]  hover:bg-red-600 duration-200 text-white py-4 rounded-2xl mt-4 px-4 w-[150px]'>Add To Cart</button>
+                        {btn && (
 
                             <div className=' text-black flex w-full justify-between font-normal'>
                                 <button onClick={handleReduce} className='text-[20px]'>-</button>
                                 <div className="qty bg-gray-300 rounded px-[15px] py-[5px]">{qty}</div>
                                 <button onClick={handleAdd} className='text-[20px]'>+</button>
                             </div>
-                        )} */}
+                        )}
 
                     </div>
                     <div className="category">
