@@ -23,11 +23,11 @@ import { Toaster } from 'react-hot-toast';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import UserAuth from './Auth/UserAuth';
 import ProductDisplay from './Pages/ProductDisplay/ProductDisplay';
-import Success from './Pages/Payment/Success';
 import Cancel from './Pages/Payment/Cancel';
 import UserDashboard from './Pages/Dashboard/UserDashboard/UserDashboard';
 import Settings from './Pages/Dashboard/UserDashboard/Settings/Settings';
 import Orders from './Pages/Dashboard/UserDashboard/Orders/Orders';
+import Success from './Pages/Payment/Success';
 
 // make the div flex and make the child of that div flex-1/flex-grow so that the child will take up entire remaining space no need to use height 100%
 

@@ -3,6 +3,7 @@ import Container from '../../Components/Container/Container'
 import success from '/images/success.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCart } from '../../Store/ProductsSlice'
+import { Link } from 'react-router-dom'
 
 const Success = () => {
     // const {cart} = useSelector((state)=> state.products);

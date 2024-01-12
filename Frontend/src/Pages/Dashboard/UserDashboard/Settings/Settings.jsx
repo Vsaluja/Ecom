@@ -47,7 +47,7 @@ const Settings = () => {
         <UserDashboard />
         <Container>
 
-            <div className='flex-1 settings p-2 my-2 bg-gray-800 rounded'>
+            <div className='flex-1 settings py-2 px-6 my-2 bg-gray-800 rounded'>
                 <h2 className='text-center text-[40px] text-white font-bold'>Settings</h2>
                 <form action="" className='flex my-4 flex-col p-4 bg-white max-w-[500px] mx-auto shadow-2xl rounded gap-2'>
                     <div className="firstName flex flex-col gap-2 justify-center">

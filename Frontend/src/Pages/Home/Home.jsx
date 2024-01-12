@@ -6,6 +6,7 @@ import OnSale from './OnSale/OnSale';
 // import homeBanner from '/images/homeBanner2.jpg';
 // import homeBanner from '/images/newBanner.png';
 import HomeBanner from './HomeBanner/HomeBanner';
+import Success from '../Payment/Success';
 
 const Home = () => {
 
