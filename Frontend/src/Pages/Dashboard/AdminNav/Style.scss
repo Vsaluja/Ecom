@@ -1,0 +1,64 @@
+.active {
+    background-color: white;
+    color: black;
+
+}
+
+.box-shadow {
+    box-shadow: 5px 10px 20px black;
+}
+
+.btn {
+    display: none;
+}
+
+@media (max-width: 1490px) {
+    .btn {
+        display: block;
+    }
+
+    .adminNav {
+        display: block;
+    }
+
+    .display {
+        display: none !important;
+    }
+
+    .slideRight {
+        animation: slideRight 0.4s forwards ease-in-out;
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+
+    .slideBack {
+        animation: slideBack 0.4s forwards ease-in-out;
+    }
+
+
+
+    @keyframes slideRight {
+        0% {
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+
+        100% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+
+    }
+
+    @keyframes slideBack {
+        0% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(-10px);
+            opacity: 1;
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+.carousel-items {
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        /* Adjust the width of the scrollbar */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        /* Color of the scrollbar thumb */
+        background: #888;
+        // background: transparent;
+        border-radius: 4px;
+        height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        background: transparent;
+        /* Color of the scrollbar track */
+    }
+
+    .product {
+        margin-top: 0px;
+    }
+}

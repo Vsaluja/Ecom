@@ -1,0 +1,5 @@
+@import '../../mixins.scss';
+
+.name {
+    @include ellipsis(3);
+}

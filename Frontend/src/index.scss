@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './mixins.scss';
+
+
+:root {
+    // ECOM
+    // --ecom-font-bg: #212121;
+    --ecom-text-bg: #ff4141;
+    --ecom-text-hover-bg: #da4040;
+    --ecom-login-bg: #fce3fe;
+
+    --admin-bg: #272727;
+    --admin-body-bg: #f4f4f4;
+    // --admin-text: #5D1DCE;
+
+    --back-font-col: #5310CB;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        /* Adjust the width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        /* Color of the scrollbar thumb */
+        background: #888;
+        // Round borders for thumb
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Color of the scrollbar track */
+    }
+}
+
+
+// HERE I have given root min-height of 100% so that the footer always stays in the bottom using margin top auto but when children try to take the complete height of root using min-height 100% or height 100% they are not able to so we know that not in every page we will need min-Height 100% min-height 100% is used when we know we will have many elements on our page that the page itself will create a scroll vertically that the footer will stay in the bottom so if we know that our page will not have much elements just like our login and signup page so in the .scss file target #root and set the fixed height 100% and in login and signup direct children of #root make them height-100% or min height 100% won't have problems with height anymore :D
+
+#root {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    // font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}

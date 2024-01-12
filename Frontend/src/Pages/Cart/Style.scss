@@ -1,0 +1,6 @@
+@import '../../mixins.scss';
+
+
+.prodName {
+    @include ellipsis(2);
+}
