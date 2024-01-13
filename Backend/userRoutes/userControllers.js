@@ -117,6 +117,28 @@ export const loginUser = async (req, res) => {
 
 }
 
+
+export const userDetails = async (req, res) => {
+
+    try {
+        const data = await User.find();
+
+        res.status(200).send({
+            success: true,
+            message: "Users data has been received",
+            usersData: data
+        });
+    } catch (error) {
+        console.log("Error in userDetails", error);
+        res.status(500).send({
+            success: false,
+            message: "Users data could not be found",
+            error
+        })
+    }
+
+}
+
 export const updateDetails = async (req, res) => {
     try {
         const { email, password } = req.body;

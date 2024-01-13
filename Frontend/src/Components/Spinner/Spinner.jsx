@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // default value of path is login if no path is provided then only it will go to login
 const Spinner = ({
     path = "/login",
-    text = "Unauthorized Access. Redirecting in ",
+    text = "Working on it",
 }) => {
     const [time, setTime] = useState(3);
     const navigate = useNavigate();

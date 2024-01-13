@@ -43,6 +43,7 @@ router.post('/create-checkout-session', async (req, res) => {
             cancel_url: `${process.env.FRONTEND_URL}/payment/cancel`
         })
 
+        console.log(session);
         res.json({ id: session.id });
     } catch (error) {
 

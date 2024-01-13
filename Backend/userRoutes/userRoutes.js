@@ -1,6 +1,6 @@
 import express from 'express';
-import { loginUser, registerUser, updateDetails } from './userControllers.js';
-import { isAdmin, requireSignIn, userDetails } from './userMiddlewares.js';
+import { loginUser, registerUser, updateDetails, userDetails } from './userControllers.js';
+import { isAdmin, requireSignIn } from './userMiddlewares.js';
 import { getCart, setCart } from './cartControllers.js';
 
 const router = express.Router();

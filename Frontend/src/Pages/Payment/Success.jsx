@@ -2,15 +2,17 @@ import React, { useEffect } from 'react'
 import Container from '../../Components/Container/Container'
 import success from '/images/success.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCart } from '../../Store/ProductsSlice'
+
 import { Link } from 'react-router-dom'
+import { setCart } from '../../Store/ProductsSlice'
 
 const Success = () => {
-    // const {cart} = useSelector((state)=> state.products);
+    const { cart } = useSelector((state) => state.products);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(setCart([]))
-    }, [])
+    }, [cart?.length])
 
     return (
         <div className='success flex-1 flex'>

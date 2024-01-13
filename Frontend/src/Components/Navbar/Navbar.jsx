@@ -102,7 +102,7 @@ const Navbar = () => {
                             <div className="content hidden absolute  w-[180px] border-2 border-t-0 min-h-20 bg-white top-6 left-[-30px] flex flex-col items-center justify-center pt-10 pb-4 text-center gap-6 font-bold">
                                 {user?.user?.role ? (
                                     <>
-                                        <Link to={`/dashboard/user/orders`} className=' text-md'>Profile</Link>
+                                        <Link to={`/dashboard/user/settings`} className=' text-md'>Profile</Link>
                                         <Link to={`/dashboard/admin`} className='text-md'>Admin Panel</Link>
                                     </>
                                 ) : (

@@ -47,23 +47,3 @@ export const isAdmin = async (req, res, next) => {
 
 // User details
 
-export const userDetails = async (req, res) => {
-
-    try {
-        const data = await User.find();
-
-        res.status(200).send({
-            success: true,
-            message: "Users data has been received",
-            usersData: data
-        });
-    } catch (error) {
-        console.log("Error in userDetails", error);
-        res.status(500).send({
-            success: false,
-            message: "Users data could not be found",
-            error
-        })
-    }
-
-}

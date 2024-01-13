@@ -61,6 +61,8 @@ const Cart = () => {
             console.log("RES", res);
             const session = res?.data?.id;
 
+            alert("Test Card Details, Number: 4242 4242 4242 4242, Expiry: 12/34, CVV: 123");
+
             const result = stripe.redirectToCheckout({
                 sessionId: session
             })
