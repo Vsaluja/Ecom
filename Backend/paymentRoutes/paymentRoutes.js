@@ -27,7 +27,7 @@ router.post('/create-checkout-session', async (req, res) => {
                     product_data: {
                         name: product.name.toUpperCase(),
                         // path doesn't work image doesn't display will try hosting images on firebase
-                        images: [`${process.env.BACKEND_URL}/products/${product.image}`]
+                        images: [`${product.image}`]
                     },
                     unit_amount: Math.round(product.price.orgPrice * 100)
                 },

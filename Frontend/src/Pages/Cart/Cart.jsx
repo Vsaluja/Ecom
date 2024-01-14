@@ -105,7 +105,7 @@ const Cart = () => {
                                             </div>
                                             <div className="left flex justify-start w-full gap-2 md:gap-6  ">
                                                 <Link to={`/display/${product.id}`} className="image max-w-[100px]">
-                                                    <img className='min-w-[100px] rounded' src={`/products/${product.image}`} alt="" />
+                                                    <img className='min-w-[100px] rounded' src={`${product.image}`} alt="" />
                                                 </Link>
                                                 <div className="me-2  flex flex-col gap-[5px]">
                                                     <h2 className='  prodName capitalize'>{product.name}</h2>
