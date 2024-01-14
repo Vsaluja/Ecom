@@ -34,10 +34,10 @@ const AdminDashboard = () => {
 
     return (
         <div className='flex-1 flex  py-5 bg-[color:var(--admin-body-bg)]'>
-            <Container className={'relative  flex'}>
+            <Container className={'relative  flex flex-col'}>
 
                 <AdminNav />
-                <div className='flex justify-around items-start mt-5 flex-wrap gap-20'>
+                <div className='flex justify-around items-start my-20 flex-wrap gap-20'>
 
                     <div className="box bg-[#252525]  rounded-2xl w-[280px] sm:w-[500px] h-[250px] rounded p-4 flex flex-col items-center justify-center  gap-10 text-white">
                         <div className='flex sm:gap-4 lg:gap-20 items-center justify-center'>

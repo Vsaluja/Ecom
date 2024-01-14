@@ -10,7 +10,7 @@ const Product = ({ product }) => {
         <div className='product mt-6 rounded max-w-[150px] md:max-w-[250px] lg:max-w-[260px]  p-[5px] flex flex-col gap-2  justify-between hover:scale-110   duration-200 bg-white cursor-pointer' onClick={() => navigate(`/display/${product.id}`)}>
             {/* onError handles if the image doesnt load to will take the noImage */}
 
-            <img className='w-full rounded' src={`${import.meta.env.VITE_API}/products/${product.image}`} onError={(e) => { e.target.onError = null; e.target.src = noImage }} alt="" />
+            <img className='w-full rounded' src={product.image} onError={(e) => { e.target.onError = null; e.target.src = noImage }} alt="" />
 
             {/* Actual code from reddit */}
             {/* <img src={imageSrc} onError={(e)=>{e.target.onError = null; e.target.src = fallbackSrc}}/> */}

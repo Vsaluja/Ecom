@@ -38,20 +38,22 @@ const AdminNav = () => {
     }, [location])
 
     return (
-        <div className={`adminNav absolute lg:relative w-[100px] h-full z-30  rounded  top-[0px] ${open ? "box-shadow slideRight left-[-1px]" : "slideBack left-[  0px]"} absolute`}>
-            <BsArrowRightSquareFill className={`btn text-5xl text-black ${open ? "opacity-100 left-[90px]" : "opacity-20"} absolute z-20 top-4 left-[-20px]`} onClick={handleResponsiveNav} />
-            <div className={`h-[100%]  bg-black px-2 ${open ? "flex" : "display"} py-10 z-30 rounded  top-[0px] bg-black xl:flex flex-col gap-10`}>
+        <div className={`adminNav w-full`}>
 
-                <div className={`text-center cursor-pointer ${active === 1 ? "active" : "text-white"}  rounded p-1 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin') }}>
+            {/* <BsArrowRightSquareFill className={`btn text-5xl text-black ${open ? "opacity-100 left-[90px]" : "opacity-20"} absolute z-20 top-4 left-[-20px]`} onClick={handleResponsiveNav} /> */}
+
+            <div className={` w-full  bg-black p-4 bg-black flex  gap-10 rounded`}>
+
+                <div className={`text-center cursor-pointer ${active === 1 ? "active" : "text-white"}  rounded py-2 px-4 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin') }}>
                     <MdDashboard className='font-bold text-[25px] flex-1' />
                     <p className='font-bold text-[12px] '>Dashboard</p>
                 </div>
-                <div className={`text-center cursor-pointer ${active === 2 ? "active" : "text-white"}  rounded p-1 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin/userdetails') }}>
+                <div className={`text-center cursor-pointer ${active === 2 ? "active" : "text-white"}  rounded py-2 px-4 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin/userdetails') }}>
 
                     <FaUserFriends className='font-bold  text-[25px] flex-1' />
                     <p className='font-bold  text-[12px] '>Users</p>
                 </div>
-                <div className={`text-center cursor-pointer ${active === 3 ? "active" : "text-white"}  rounded p-1 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin/productdetails') }}>
+                <div className={`text-center cursor-pointer ${active === 3 ? "active" : "text-white"}  rounded py-2 px-4 flex flex-col  justify-center items-center gap-1 text-lg`} onClick={() => { navigate('/dashboard/admin/productdetails') }}>
 
                     <MdInventory className='font-bold text-[25px] flex-1' />
                     <p className='font-bold text-[12px] '>Products</p>

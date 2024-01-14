@@ -5,11 +5,12 @@ import { toast } from "react-toastify";
 import { useSelector } from 'react-redux';
 import AdminNav from '../../AdminNav/AdminNav';
 import './Style.scss';
+import { imageDB } from '../../../../../firebaseConfig/firebaseConfig';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const AddProduct = () => {
     const [file, setFile] = useState("");
     const [preview, setPreview] = useState("");
-
     const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [category, setCategory] = useState("")
@@ -36,32 +37,56 @@ const AddProduct = () => {
         }
     }
 
-    const addProduct = async (e) => {
+    const addImage = (e) => {
         e.preventDefault();
+        // first the image is stored in firebase once the image is stored and the url is generated then addProduct function is called to add the product in mongodb along with the image url that is passed in addProduct
+        // Storing the image in firebase storage
+        const imgRef = ref(imageDB, `products/product_${id}`);
+
+        uploadBytes(imgRef, file)
+            .then((img) => {
+                getDownloadURL(img.ref)
+                    .then((url) => {
+                        console.log("myVal", url);
+                        addProduct(url)
+                    })
+            })
+    }
+
+    const addProduct = async (imgUrl) => {
+
 
         try {
 
-            const formData = new FormData();
+            // Previous code to store data and image in local products folder
+            // const formData = new FormData();
 
             // This is how we set the fileName 
-            let ext = file.name.split('.').pop();
-            const fileName = "product_" + id + "." + ext;
-
+            // let ext = file.name.split('.').pop();
+            // const fileName = "product_" + id + "." + ext;
 
             // If we put fileName beside file it will take fileName as originalname; 
             // make sure that names in "" are the ones which we will insert in mongoDb so should match the exact fields in DB
-            formData.append("file", file, fileName);
-            formData.append("id", id)
-            formData.append("name", name);
-            formData.append("category", category);
-            formData.append("subCategory", subCategory);
-            formData.append("price", price);
-            { oldPrice === "" && setOldPrice(0) }
-            formData.append("oldPrice", oldPrice);
-            formData.append("description", description);
+            // formData.append("file", file, fileName); previous method to store the image in local folder
+
+            // formData.append("image", imgUrl)
+            // formData.append("id", id)
+            // formData.append("name", name);
+            // formData.append("category", category);
+            // formData.append("subCategory", subCategory);
+            // formData.append("price", price);
+            // { oldPrice === "" && setOldPrice(0) }
+            // formData.append("oldPrice", oldPrice);
+            // formData.append("description", description);
 
 
-            const res = await axios.post(`${import.meta.env.VITE_API}/products/add`, formData);
+            // hosting images in firebase
+            const data = { image: imgUrl, id, name, category, subCategory, price, oldPrice, description };
+
+            console.log("Data", data);
+
+            const res = await axios.post(`${import.meta.env.VITE_API}/products/add`, data);
+
 
             if (res?.data?.success) {
                 setId("");
@@ -99,7 +124,6 @@ const AddProduct = () => {
 
         if (!file) return;
         setPreview(URL.createObjectURL(file));
-        console.log("URL", URL.createObjectURL(file));
 
     }, [file])
 
@@ -108,7 +132,7 @@ const AddProduct = () => {
             <Container className={`relative h-[100%] flex items-center justify-center`}>
                 <AdminNav />
                 <div className="addProduct w-full flex items-center justify-start p-w flex-col-reverse lg:flex-row-reverse gap-10 my-0 h-[100%]">
-                    <form onSubmit={addProduct} encType='multipart/form-data' className="left w-full max-w-[500px] mx-auto bg-white p-6  flex flex-col rounded lg:max-w-[500px] lg:mx-auto max-h-[500px] overflow-x-hidden gap-2  lg:my-0">
+                    <form onSubmit={addImage} encType='multipart/form-data' className="left w-full max-w-[500px] mx-auto bg-white p-6  flex flex-col rounded lg:max-w-[500px] lg:mx-auto max-h-[500px] overflow-x-hidden gap-2  lg:my-0">
                         <h2 className='text-center text-4xl font-bold text-[#303030] mb-6'>Add a new product</h2>
 
                         <div className='w-full flex flex-col gap-2'>
@@ -208,8 +232,6 @@ const AddProduct = () => {
                                 className='p-2 border-2 outline-none'
                                 value={oldPrice}
                                 onChange={(e) => {
-
-
 
                                     setOldPrice(e.target.value)
 

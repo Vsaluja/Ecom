@@ -23,8 +23,10 @@ export const allProducts = async (req, res) => {
 
 export const addProduct = async (req, res) => {
     try {
-        const { id, name, category, subCategory, price: orgPrice, oldPrice, description } = req.body;
-        const image = req.file.originalname;
+        const { id, name, category, subCategory, image, price: orgPrice, oldPrice, description } = req.body;
+        // const image = req.file.originalname;
+
+        console.log(req.body);
 
         if (oldPrice === "") {
             oldPrice = 0;
@@ -61,12 +63,6 @@ export const addProduct = async (req, res) => {
                 message: "Price is not provided"
             })
         }
-        if (!oldPrice) {
-            return res.status(200).send({
-                success: false,
-                message: "Old price is not provided"
-            })
-        }
         if (!description) {
             return res.status(200).send({
                 success: false,
@@ -80,7 +76,7 @@ export const addProduct = async (req, res) => {
             })
         }
 
-        // checking existing product with similar id
+        // // checking existing product with similar id
 
         const existingProduct = await Product.findOne({ id });
 

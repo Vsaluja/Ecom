@@ -1,4 +1,4 @@
-import React, { useEffect, useSyncExternalStore } from 'react'
+import React, { useEffect, useState, useSyncExternalStore } from 'react'
 import Container from '../../Components/Container/Container'
 import deals from '/images/Deals.png';
 import CategoriesSection from './CategoriesSection/CategoriesSection';
@@ -6,12 +6,11 @@ import OnSale from './OnSale/OnSale';
 // import homeBanner from '/images/homeBanner2.jpg';
 // import homeBanner from '/images/newBanner.png';
 import HomeBanner from './HomeBanner/HomeBanner';
-import Success from '../Payment/Success';
+
 
 const Home = () => {
 
     // <img src={`http://localhost:5173/products/product_1.png`} alt="" />
-
 
 
     return (
@@ -23,6 +22,7 @@ const Home = () => {
                 <CategoriesSection />
                 <img className='h-[40px] w-full lg:h-[100px] lg:w-full' src={deals} alt="" />
                 <OnSale />
+
             </Container>
         </div>
     )
