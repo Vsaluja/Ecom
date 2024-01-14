@@ -75,7 +75,7 @@ const ProductDisplay = () => {
         <div className='productDisplay '>
             <Container className={`py-10 flex flex-col lg:flex-row lg:gap-20`}>
                 <div className="left flex justify-center">
-                    <img className='lg:min-w-[400px]' src={`${product?.image}`} alt="" />
+                    <img className='lg:min-w-[450px]' src={`${product?.image}`} alt="" />
                 </div>
                 <div className="right flex mt-10 lg:mt-0 flex-col gap-6 w-full lg:w-1/2">
                     <h2 className='capitalize text-[30px] font-bold text-[#3D3D3D]'>{product?.name}</h2>

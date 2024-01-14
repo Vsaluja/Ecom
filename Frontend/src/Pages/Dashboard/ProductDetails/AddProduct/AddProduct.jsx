@@ -129,9 +129,9 @@ const AddProduct = () => {
 
     return (
         <div className='flex-grow py-5 bg-[color:var(--admin-body-bg)]'>
-            <Container className={`relative h-[100%] flex items-center justify-center`}>
+            <Container className={`relative h-[100%] flex flex-col  items-center justify-center`}>
                 <AdminNav />
-                <div className="addProduct w-full flex items-center justify-start p-w flex-col-reverse lg:flex-row-reverse gap-10 my-0 h-[100%]">
+                <div className="addProduct w-full flex items-center my-10 justify-start p-w flex-col-reverse lg:flex-row-reverse gap-10 my-0 h-[100%]">
                     <form onSubmit={addImage} encType='multipart/form-data' className="left w-full max-w-[500px] mx-auto bg-white p-6  flex flex-col rounded lg:max-w-[500px] lg:mx-auto max-h-[500px] overflow-x-hidden gap-2  lg:my-0">
                         <h2 className='text-center text-4xl font-bold text-[#303030] mb-6'>Add a new product</h2>
 

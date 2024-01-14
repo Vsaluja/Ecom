@@ -70,7 +70,7 @@ const Category = () => {
                 <img src={banner} alt="" />
                 <h3 className='text-2xl mt-10'>Shop in <span className='capitalize'>{subCategory || category}</span></h3>
 
-                <div className='flex gap-4 flex-wrap justify-around'>
+                <div className='flex gap-4 flex-wrap'>
 
                     {filteredProducts?.map((product) => {
                         return (
