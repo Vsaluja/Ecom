@@ -14,7 +14,7 @@ const HomeBanner = () => {
                     </div>
                 </div>
                 <div className="desc max-w-[300px] md:max-w-[500px] mb-4 text-[12px] md:text-[16px]">It’s time to hit your gaming zone with the 7.1 channel virtual surround sound gaming headphones, boAt Immortal IM-700</div>
-                <Link to="/category/electronics" className='bg-[color:var(--ecom-text-bg)] w-[100px] md:w-[150px] p-2 md:p-4 text-white rounded text-center font-bold'>Shop now</Link>
+                <Link to="/category/electronics" className='bg-[color:var(--ecom-text-bg)] w-[120px] md:w-[150px] p-2 md:p-4 text-white rounded text-center font-bold'>Shop now</Link>
             </div>
 
         </div>

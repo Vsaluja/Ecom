@@ -15,7 +15,7 @@ const HomeBannerMiddle = () => {
                 <div className="smallText text-[20px] text-white">Apple Airpods Max</div>
                 <div className="medText text-[30px] md:text-[50px] font-bold ms-4  text-white">Summer Sale</div>
                 <div className='font-bold text-white '>AirPods Max feature incredible high-fidelity audio, Adaptive EQ, Active Noise Cancellation, and spatial audio</div>
-                <Link to="/category/electronics" className='w-[100px] md:w-[150px] p-2 md:p-[12px] bg-white rounded text-center font-bold'>Shop Now</Link>
+                <Link to="/category/electronics" className='w-[120px] md:w-[150px] p-2 md:p-[12px] bg-white rounded text-center font-bold'>Shop Now</Link>
             </div>
 
         </div>
