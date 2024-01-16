@@ -44,7 +44,7 @@ const SearchData = ({ searchVal, searchOpen }) => {
 
                                 return (
                                     <Link to={`/display/${product.id}`} className="searchItem flex gap-6 rounded border-b-2 p-2">
-                                        <div className="img  sm:max-w-[50px]">
+                                        <div className="img max-w-[50px]">
                                             <img className='min-w-[50px]' src={product.image} alt="" />
                                         </div>
                                         <div className="name capitalize">
