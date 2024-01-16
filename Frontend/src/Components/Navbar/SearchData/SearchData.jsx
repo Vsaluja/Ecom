@@ -15,6 +15,7 @@ const SearchData = ({ searchVal, searchOpen }) => {
         if (searchVal != "") {
             let result = [];
             products?.filter((product) => {
+
                 if (product.name.includes(searchVal)) {
                     result.push(product);
                 }
@@ -23,6 +24,13 @@ const SearchData = ({ searchVal, searchOpen }) => {
                 }
                 else if (product.subCategory.includes(searchVal)) {
                     result.push(product);
+                }
+                else {
+                    product?.allTags.forEach((tag) => {
+                        if (tag.includes(searchVal)) {
+                            result.push(product);
+                        }
+                    })
                 }
 
             })

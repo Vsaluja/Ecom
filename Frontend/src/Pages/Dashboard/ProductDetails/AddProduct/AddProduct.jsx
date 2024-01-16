@@ -17,7 +17,12 @@ const AddProduct = () => {
     const [subCategory, setSubCategory] = useState("")
     const [price, setPrice] = useState("")
     const [description, setDescription] = useState("");
+    // Individual Tag
+    const [tag, setTag] = useState("");
+    // list of all tags
+    const [allTags, setAllTags] = useState([]);
     const [oldPrice, setOldPrice] = useState(0);
+
 
 
     const { products } = useSelector((state) => state.products);
@@ -34,6 +39,22 @@ const AddProduct = () => {
         }
         else {
             setId(random);
+        }
+    }
+
+    const addTag = (e) => {
+        // Tags are used for improving search we can add upto 5 tags to a product which are like laptop, gaming, nvidia etc
+        e.preventDefault();
+        if (allTags?.length < 10 && tag?.length < 15 && tag != "") {
+
+            setAllTags((prev) => [...prev, tag.toLocaleLowerCase()]);
+            setTag("");
+        }
+        else if (tag == "") {
+            alert("Unable to insert an empty tag");
+        }
+        else {
+            alert("Can't add more than 10 tags to this product")
         }
     }
 
@@ -58,30 +79,9 @@ const AddProduct = () => {
 
         try {
 
-            // Previous code to store data and image in local products folder
-            // const formData = new FormData();
-
-            // This is how we set the fileName 
-            // let ext = file.name.split('.').pop();
-            // const fileName = "product_" + id + "." + ext;
-
-            // If we put fileName beside file it will take fileName as originalname; 
-            // make sure that names in "" are the ones which we will insert in mongoDb so should match the exact fields in DB
-            // formData.append("file", file, fileName); previous method to store the image in local folder
-
-            // formData.append("image", imgUrl)
-            // formData.append("id", id)
-            // formData.append("name", name);
-            // formData.append("category", category);
-            // formData.append("subCategory", subCategory);
-            // formData.append("price", price);
-            // { oldPrice === "" && setOldPrice(0) }
-            // formData.append("oldPrice", oldPrice);
-            // formData.append("description", description);
-
 
             // hosting images in firebase
-            const data = { image: imgUrl, id, name, category, subCategory, price, oldPrice, description };
+            const data = { image: imgUrl, id, name, category, subCategory, price, oldPrice, description, allTags };
 
             console.log("Data", data);
 
@@ -249,6 +249,30 @@ const AddProduct = () => {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                             />
+                        </div>
+                        <div className='w-full flex flex-col gap-2 '>
+                            <label className=' text-[$303030] text-md'>Product Tags</label>
+                            {allTags?.length > 0 && (
+                                <div className='tags text-[12px] flex gap-[5px] flex-wrap'>
+                                    {allTags?.map((tag) => {
+                                        return (
+                                            <span className='bg-black text-white px-[4px] rounded-full'>{tag}</span>
+
+                                        )
+                                    })}
+                                </div>
+                            )}
+                            <div className='flex w-full gap-2'>
+                                <input
+                                    type="text"
+                                    maxLength={15}
+                                    placeholder='i.e. Womens, Shoes, Pink etc. (optional)'
+                                    className='p-2 border-2 outline-none w-full'
+                                    value={tag}
+                                    onChange={(e) => setTag(e.target.value)}
+                                />
+                                <button onClick={addTag} className='bg-black text-white p-2 rounded'>Add</button>
+                            </div>
                         </div>
 
                         <div>

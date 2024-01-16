@@ -44,6 +44,12 @@ const productSchema = new mongoose.Schema({
             type: Number,
             required: true
         }
+    },
+    // Tags helps in searching we can provide tags to products such as nike, womens, shoes so it helps in searching
+    allTags: {
+        type: Object,
+        default: [],
+        lowercase: true
     }
 }, { timestamps: true })
 

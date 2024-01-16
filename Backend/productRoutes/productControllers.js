@@ -23,7 +23,7 @@ export const allProducts = async (req, res) => {
 
 export const addProduct = async (req, res) => {
     try {
-        const { id, name, category, subCategory, image, price: orgPrice, oldPrice, description } = req.body;
+        const { id, name, category, subCategory, image, price: orgPrice, oldPrice, description, allTags } = req.body;
         // const image = req.file.originalname;
 
         console.log(req.body);
@@ -69,6 +69,12 @@ export const addProduct = async (req, res) => {
                 message: "Description is not provided"
             })
         }
+        if (!allTags) {
+            return res.status(200).send({
+                success: false,
+                message: "Tags are not provided"
+            })
+        }
         if (!image) {
             return res.status(200).send({
                 success: false,
@@ -87,7 +93,7 @@ export const addProduct = async (req, res) => {
             })
         }
 
-        const newProduct = await new Product({ id, name, category, subCategory, price: { orgPrice, oldPrice }, image, description }).save();
+        const newProduct = await new Product({ id, name, category, subCategory, price: { orgPrice, oldPrice }, image, description, allTags }).save();
 
         res.status(201).send({
             success: true,
