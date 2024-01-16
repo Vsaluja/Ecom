@@ -1,7 +1,19 @@
+@import '../../../mixins.scss';
+
 .searchData {
     animation: name duration timing-function delay iteration-count direction fill-mode;
     animation: zoom 0.4s forwards ease-in-out;
+
 }
+
+
+.name {
+    p {
+        @include ellipsis(3);
+    }
+}
+
+
 
 @keyframes zoom {
 
