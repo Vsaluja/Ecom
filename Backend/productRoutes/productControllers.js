@@ -69,12 +69,12 @@ export const addProduct = async (req, res) => {
                 message: "Description is not provided"
             })
         }
-        if (!allTags) {
-            return res.status(200).send({
-                success: false,
-                message: "Tags are not provided"
-            })
-        }
+        // if (!allTags) {
+        //     return res.status(200).send({
+        //         success: false,
+        //         message: "Tags are not provided"
+        //     })
+        // }
         if (!image) {
             return res.status(200).send({
                 success: false,
