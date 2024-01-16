@@ -6,6 +6,8 @@ import OnSale from './OnSale/OnSale';
 // import homeBanner from '/images/homeBanner2.jpg';
 // import homeBanner from '/images/newBanner.png';
 import HomeBanner from './HomeBanner/HomeBanner';
+import HomeBannerMiddle from './HomeBanner/HomeBannerMiddle';
+import BestSellers from './BestSellers/BestSellers';
 
 
 const Home = () => {
@@ -20,6 +22,8 @@ const Home = () => {
             <Container>
                 <HomeBanner />
                 <CategoriesSection />
+                <BestSellers />
+                <HomeBannerMiddle />
                 <img className='h-[40px] w-full lg:h-[100px] lg:w-full' src={deals} alt="" />
                 <OnSale />
 

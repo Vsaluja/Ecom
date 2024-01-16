@@ -13,12 +13,14 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { setAuth } from '../../Store/AuthSlice';
 import { toast } from 'react-toastify';
 import { setCart } from '../../Store/ProductsSlice';
+import SearchData from './SearchData/SearchData';
 
 
 const Navbar = () => {
 
     const [mobile, setMobile] = useState(false);
     const [search, setSearch] = useState(false);
+    const [searchVal, setSearchVal] = useState("");
     const [totalCart, setTotalCart] = useState();
     const { cart } = useSelector((state) => state.products);
     const { user, adminNav } = useSelector((state) => state.auth);
@@ -34,7 +36,12 @@ const Navbar = () => {
     const handleSearch = () => {
         setSearch((prev) => !prev);
         setMobile(false)
+        setSearchVal("");
+
     }
+
+
+
 
     const handleLogout = () => {
         localStorage.removeItem("auth");
@@ -58,6 +65,7 @@ const Navbar = () => {
         window.scrollTo(0, 0);
         setSearch(false)
         setMobile(false)
+        setSearchVal("");
     }, [location])
 
     useEffect(() => {
@@ -79,11 +87,11 @@ const Navbar = () => {
                     <h2 className='text-2xl lg:text-4xl font-bold'>Shoppe.</h2>
                 </Link>
 
-                <div className={`search border-2 bg-gray-100 lg:rounded-3xl lg:flex items-center p-2 gap-3 ${search ? "anim flex justify-between absolute border-b-2 top-[70px] w-full left-0  p-4" : "hidden"}`}>
+                <div className={`search border-2 bg-gray-100 lg:rounded-3xl lg:flex items-center p-2 gap-3 ${search ? "anim absolute flex justify-between border-b-2 top-[70px] w-full left-0  p-4 z-20" : "hidden"}`}>
 
                     <CiSearch className='hidden lg:block' />
 
-                    <input className='w-full bg-gray-100  lg:placeholder:text-lg lg:text-lg lg:min-w-[320px] outline-none' type="text" placeholder='Search for products, brands and more' />
+                    <input className='w-full bg-gray-100  lg:placeholder:text-lg lg:text-lg lg:min-w-[320px] outline-none' type="text" placeholder='Search for products, brands and more' value={searchVal} onChange={(e) => setSearchVal(e.target.value)} />
 
                     <IoMdClose className={`${search ? "block" : "hidden"}`} onClick={handleSearch} />
                 </div>
@@ -142,6 +150,7 @@ const Navbar = () => {
 
                 </div>
 
+                <SearchData searchVal={searchVal} searchOpen={search} />
             </Container>
         </div>
     )

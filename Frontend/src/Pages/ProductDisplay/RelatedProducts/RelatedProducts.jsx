@@ -7,7 +7,7 @@ const RelatedProducts = ({ category, subCategory }) => {
     return (
         <Container>
 
-            <Carousel relatedProducts={"Related Products"} category={category} subCategory={subCategory} />
+            <Carousel title={"Related Products"} category={category} subCategory={subCategory} />
         </Container>
     )
 }

@@ -1,0 +1,18 @@
+.searchData {
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: zoom 0.4s forwards ease-in-out;
+}
+
+@keyframes zoom {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
