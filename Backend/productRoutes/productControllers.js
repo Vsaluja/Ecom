@@ -74,7 +74,7 @@ export const addProduct = async (req, res) => {
         //         success: false,
         //         message: "Tags are not provided"
         //     })
-        // }
+        // }l
         if (!image) {
             return res.status(200).send({
                 success: false,
