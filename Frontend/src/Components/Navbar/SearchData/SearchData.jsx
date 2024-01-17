@@ -26,11 +26,21 @@ const SearchData = ({ searchVal, searchOpen }) => {
                     result.push(product);
                 }
                 else {
-                    product?.allTags.forEach((tag) => {
-                        if (tag.includes(searchVal)) {
+                    // product?.allTags.forEach((tag) => {
+                    //     if (tag.includes(searchVal)) {
+                    //         result.push(product);
+                    //     }
+                    //    
+                    // })
+
+                    for (let i = 0; i < product?.allTags?.length; i++) {
+
+                        if (product?.allTags[i].includes(searchVal)) {
                             result.push(product);
+                            break;
                         }
-                    })
+                    }
+
                 }
 
             })
