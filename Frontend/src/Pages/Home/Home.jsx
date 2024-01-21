@@ -24,7 +24,7 @@ const Home = () => {
                 <CategoriesSection />
                 <BestSellers />
                 <HomeBannerMiddle />
-                <img className='h-[40px] w-full lg:h-[100px] lg:w-full' src={deals} alt="" />
+                {/* <img className='h-[40px] w-full lg:h-[100px] lg:w-full' src={deals} alt="" /> */}
                 <OnSale />
 
             </Container>
