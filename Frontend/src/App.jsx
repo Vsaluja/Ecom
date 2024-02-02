@@ -104,8 +104,7 @@ const App = () => {
 
 
   const updateCart = async () => {
-    const id = user?.user?._id
-    console.log(cart?.length);
+    const id = user?.user?._id;
     if (user?.user) {
       try {
         const res = await axios.post(`${import.meta.env.VITE_API}/user/setcart`, { id: id, cart: cart });

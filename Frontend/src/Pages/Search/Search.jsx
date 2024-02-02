@@ -6,7 +6,8 @@ import Product from '../../Components/Product/Product';
 
 const Search = () => {
 
-    const { query } = useParams();
+    let { query } = useParams();
+    query = query.toLowerCase();
 
     const { products } = useSelector((state) => state.products);
     const [searchData, setSearchData] = useState();
@@ -64,7 +65,7 @@ const Search = () => {
 
                             {searchData?.map((product) => {
                                 return (
-                                    <Product key={product._id} product={product} />
+                                    <Product key={product.id} product={product} />
                                 )
                             })}
 

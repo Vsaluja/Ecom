@@ -74,7 +74,7 @@ const Category = () => {
 
                     {filteredProducts?.map((product) => {
                         return (
-                            <Product key={product._id} product={product} />
+                            <Product key={product.id} product={product} />
                         )
                     })}
 

@@ -124,7 +124,7 @@ const Navbar = () => {
                         <Link className='loginBtn py-[4px] px-6 text-lg border-[#212121] border-2 rounded-xl hover:bg-[#212121] hover:text-white duration-300' to={`/login`}>Login</Link>
                     )}
                     <Link to="/cart" className='hidden lg:block flex flex-col items-center justify-center cursor-pointer hover:text-[#212121] duration-300 relative'>
-                        <a href=""><LuShoppingCart className='text-2xl lg:text-2xl text-gray-700 hover:text-[#212121] duration-300' /></a>
+                        <LuShoppingCart className='text-2xl lg:text-2xl text-gray-700 hover:text-[#212121] duration-300' />
                         <h3>Cart</h3>
                         {totalCart > 0 && (
 
@@ -134,6 +134,7 @@ const Navbar = () => {
 
                 </div>
 
+                {/* Mobile Devices */}
                 <div className="phone flex gap-4 lg:hidden">
 
                     <CiSearch className='text-2xl' onClick={handleSearch} />
