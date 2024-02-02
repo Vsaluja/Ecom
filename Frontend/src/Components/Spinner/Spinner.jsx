@@ -26,7 +26,7 @@ const Spinner = ({
     return (
         <div className="loader">
             <ReactLoading type="spin" color="black" />
-            <h2>{text + time}</h2>
+            <h2>{text + " " + time}</h2>
         </div>
     );
 };

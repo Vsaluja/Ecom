@@ -27,6 +27,7 @@ import Cancel from './Pages/Payment/Cancel';
 import UserDashboard from './Pages/Dashboard/UserDashboard/UserDashboard';
 import Settings from './Pages/Dashboard/UserDashboard/Settings/Settings';
 import Success from './Pages/Payment/Success';
+import Search from './Pages/Search/Search';
 
 
 
@@ -155,7 +156,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/display/:id' element={<ProductDisplay />} />
-
+        <Route path='/search/:query' element={<Search />} />
 
         {/* Protecting the routes that we want the user to login first so that they can't access without loggin in */}
         {/* Whichever route user wants to go they have to go through Auth and then Auth will direct them to that route */}

@@ -91,7 +91,7 @@ const Navbar = () => {
 
                     <CiSearch className='hidden lg:block' />
 
-                    <input className='w-full bg-gray-100  lg:placeholder:text-lg lg:text-lg lg:min-w-[320px] outline-none' type="text" placeholder='Search for products, brands and more' value={searchVal} onChange={(e) => setSearchVal(e.target.value)} />
+                    <input className='w-full bg-gray-100  lg:placeholder:text-lg lg:text-lg lg:min-w-[320px] outline-none' type="text" placeholder='Search for products, brands and more' value={searchVal} onChange={(e) => setSearchVal(e.target.value)} onKeyUp={(e) => { e.key === "Enter" && navigate(`/search/${searchVal}`) }} />
 
                     <IoMdClose className={`${search ? "block" : "hidden"}`} onClick={handleSearch} />
                 </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
                                     </>
                                 ) : (
 
-                                    <Link to={`/dashboard/user`} className='text-md'>Profile</Link>
+                                    <Link to={`/dashboard/user/settings`} className='text-md'>Profile</Link>
                                 )}
                                 <button className='text-md text-red-600' onClick={handleLogout}>Logout</button>
                             </div>
