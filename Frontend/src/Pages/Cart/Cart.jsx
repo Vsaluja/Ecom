@@ -84,7 +84,7 @@ const Cart = () => {
     }, [cart])
 
     return (
-        <div className={`flex-1 flex py-3 ${cart.length > 0 ? "bg-gray-200" : "bg-white"}`}>
+        <div className={`min-h-[calc(100vh-80px)] flex py-3 ${cart.length > 0 ? "bg-gray-200" : "bg-white"}`}>
             {cart?.length > 0 ? (
                 <Container className={`flex-1 flex`}>
                     <div className="shoppingCart flex-1 flex flex-col lg:flex-row gap-10 bg-white shadow-2xl  rounded p-4">
@@ -98,7 +98,7 @@ const Cart = () => {
                                 {cart?.map((product) => {
                                     return (
 
-                                        <div key={product.id} className="cartProduct relative bg-gray-100    flex md:justify-between items-center flex-col md:flex-row gap-6 border-2 rounded-2xl p-[5px]">
+                                        <div key={product.id} className="cartProduct relative bg-gray-100    flex md:justify-between items-center flex-col md:flex-row gap-6 border-2 rounded-2xl p-[5px] mr-5">
 
                                             <div onClick={() => dispatch(removeFromCart(product.id))} className="removeIcon absolute right-[10px] top-[5px] text-gray-600 cursor-pointer">
                                                 <FaTrashAlt />
@@ -107,7 +107,7 @@ const Cart = () => {
                                                 <Link to={`/display/${product.id}`} className="image max-w-[100px]">
                                                     <img className='min-w-[100px] rounded' src={`${product.image}`} alt="" />
                                                 </Link>
-                                                <div className="me-2  flex flex-col gap-[5px]">
+                                                <div className="me-4 flex flex-col gap-[5px]">
                                                     <h2 className='  prodName capitalize'>{product.name}</h2>
                                                     <h2 className='text-[color:var(--ecom-text-bg)] text-[16px]'>${product.price.orgPrice}</h2>
                                                     <div className="categories flex gap-2 capitalize text-[13px] text-gray-400">
@@ -158,7 +158,7 @@ const Cart = () => {
                     </div >
 
                 </Container >
-            ) : (<div className='emptyCart w-full md:flex items-center'>
+            ) : (<div className='emptyCart h-[90vh] w-full md:flex items-center'>
                 <img className='w-full max-w-[800px] mx-auto' src={emptyCart} alt="" />
             </div>)}
         </div >

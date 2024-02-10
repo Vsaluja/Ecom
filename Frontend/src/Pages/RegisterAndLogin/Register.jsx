@@ -39,8 +39,8 @@ const Register = () => {
     }
 
     return (
-        <div className='flex-grow py-[20px] px-[40px] bg-[color:var(--ecom-login-bg)] '>
-            <Container className={`m-6 flex justify-center p-2`}>
+        <div className='min-h-[calc(100vh-80px)] py-[20px] px-[40px] bg-[color:var(--ecom-login-bg)] '>
+            <Container className={`m-6 flex-grow flex justify-center p-2`}>
                 <form className={`registerForm bg-white flex flex-col gap-4 shadow-2xl p-10 rounded w-96`}>
                     <h2 className={`text-4xl font-bold mb-4`}>Sign up</h2>
                     <input
