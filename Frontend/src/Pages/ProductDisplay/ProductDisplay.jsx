@@ -75,13 +75,13 @@ const ProductDisplay = () => {
         <div className='productDisplay '>
             <Container className={`py-10 flex flex-col lg:flex-row lg:gap-20`}>
                 <div className="left flex justify-center">
-                    <img className='md:min-w-[450px] md:h-[550px]' src={`${product?.image}`} alt="" />
+                    <img className='w-[250px] md:min-w-[450px] md:h-[550px]' src={`${product?.image}`} alt="" />
                 </div>
                 <div className="right flex mt-10 lg:mt-0 flex-col gap-6 w-full lg:w-1/2">
-                    <h2 className='capitalize text-[30px] font-bold text-[#3D3D3D]'>{product?.name}</h2>
+                    <h2 className='capitalize text-[22px] sm:text-[30px] font-bold text-[#3D3D3D]'>{product?.name}</h2>
                     <div className="price flex gap-10 items-center font-bold">
-                        {product?.price.oldPrice !== 0 && (<p className='text-[20px] line-through text-gray-400'>${product?.price.oldPrice}</p>)}
-                        <p className='text-[25px] text-red-600'>${product?.price.orgPrice}</p>
+                        {product?.price.oldPrice !== 0 && (<p className='text-[16px] sm:text-[20px] line-through text-gray-400'>${product?.price.oldPrice}</p>)}
+                        <p className='text-[20px] sm:text-[25px] text-red-600'>${product?.price.orgPrice}</p>
                     </div>
                     <div className="descriptio capitalize">
                         {product?.description}
