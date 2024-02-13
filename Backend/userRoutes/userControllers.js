@@ -23,7 +23,7 @@ export const registerUser = async (req, res) => {
         // Check for existing user
 
         const existingUser = await User.findOne({ email: email });
-        ;
+
 
         if (existingUser) {
             return res.status(200).send({
