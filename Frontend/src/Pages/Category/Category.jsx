@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import Product from '../../Components/Product/Product';
 import mens from '/images/mensBanner.png';
 import womens from '/images/womensBanner.png';
+import kids from '/images/kidsBanner.png';
 
 const Category = () => {
 
@@ -55,6 +56,9 @@ const Category = () => {
         }
         if (subCategory == "womens") {
             setBanner(womens)
+        }
+        if (subCategory == 'kids') {
+            setBanner(kids);
         }
     }
 

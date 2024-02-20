@@ -46,7 +46,7 @@ const Carousel = ({ category, onSale, subCategory, title, productsProvided }) =>
 
     return (
         <div className='carousel'>
-            <div className='text-[30px] md:text-[40px] capitalize'>{title || `Latest Deals in ${category}`}</div>
+            <div className='text-[23px] md:text-[40px] capitalize'>{title || `Latest Deals in ${category}`}</div>
             <div className="carousel-items rounded bg-gray-100 flex overflow-y-hidden gap-4 py-4 px-4 ">
                 {items?.map((item) => {
                     return (

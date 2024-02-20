@@ -60,9 +60,8 @@ const Search = () => {
                 {searchData?.length > 0 ? (
                     <div>
 
-                        <h1 className='my-10 text-2xl capitalize'>Search results for: {query}</h1>
+                        <h1 className='my-4 text-[18px] md:text-2xl capitalize'>Search results for: {query}</h1>
                         <div className='flex gap-16  flex-wrap justify-center md:justify-normal'>
-
                             {searchData?.map((product) => {
                                 return (
                                     <Product key={product.id} product={product} />

@@ -16,7 +16,7 @@ const Success = () => {
 
     return (
         <div className='success flex-1 flex'>
-            <Container className={`flex-1 flex items-center justify-center flex-col gap-4`}>
+            <Container className={`min-h-[90vh] flex items-center justify-center flex-col gap-4`}>
                 <img className='w-[100px]' src={success} alt="" />
                 <h2 className='font-bold'>Payment Successful</h2>
                 <Link to="/" className='bg-red-500 rounded-full p-4 text-white font-bold'>Continue Shopping</Link>

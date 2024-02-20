@@ -108,7 +108,7 @@ const Cart = () => {
                                                     <img className='min-w-[100px] rounded' src={`${product.image}`} alt="" />
                                                 </Link>
                                                 <div className="me-4 flex flex-col gap-[5px]">
-                                                    <h2 className='  prodName capitalize'>{product.name}</h2>
+                                                    <h2 className='  prodName max-w-[300px] md:max-w-[600px] me-2 capitalize'>{product.name}</h2>
                                                     <h2 className='text-[color:var(--ecom-text-bg)] text-[16px]'>${product.price.orgPrice}</h2>
                                                     <div className="categories flex gap-2 capitalize text-[13px] text-gray-400">
                                                         <h2>{product.subCategory}, </h2>

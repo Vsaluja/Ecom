@@ -5,7 +5,7 @@ import Carousel from '../../../Components/Carousel/Carousel'
 
 const RelatedProducts = ({ category, subCategory }) => {
     return (
-        <Container>
+        <Container className={`mb-20`}>
 
             <Carousel title={"Related Products"} category={category} subCategory={subCategory} />
         </Container>
