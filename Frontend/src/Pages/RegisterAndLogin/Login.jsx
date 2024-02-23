@@ -46,7 +46,7 @@ const Login = () => {
         <div className={`min-h-[calc(100vh-80px)] flex justify-center items-center px-[40px] bg-[color:var(--ecom-login-bg)] `}>
 
             <Container className={`m-6 flex-1 flex justify-center p-2`}>
-                <form className={`registerForm bg-white flex flex-col gap-4 shadow-2xl p-10 rounded w-96`}>
+                <form onSubmit={handleLogin} className={`registerForm bg-white flex flex-col gap-4 shadow-2xl p-10 rounded w-96`}>
                     <h2 className={`text-4xl font-bold mb-4`}>Sign In</h2>
 
                     <input
@@ -67,7 +67,6 @@ const Login = () => {
                     />
                     <button
                         className='bg-[color:var(--ecom-text-bg)] hover:bg-[color:var(--ecom-text-hover-bg)]  duration-300 text-white text-xl rounded-xl w-32 p-4 cursor-pointer'
-                        onClick={handleLogin}
                     >
                         Sign In
                     </button>
