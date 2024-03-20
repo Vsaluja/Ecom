@@ -28,7 +28,6 @@ import UserDashboard from './Pages/Dashboard/UserDashboard/UserDashboard';
 import Settings from './Pages/Dashboard/UserDashboard/Settings/Settings';
 import Success from './Pages/Payment/Success';
 import Search from './Pages/Search/Search';
-import Spinner from './Components/Spinner/Spinner';
 
 
 
