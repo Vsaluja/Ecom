@@ -2,10 +2,10 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Spinner from '../Components/Spinner/Spinner';
-import Login from '../Pages/RegisterAndLogin/Login';
 import { setAuth } from '../Store/AuthSlice';
 import { toast } from 'react-toastify';
+import MyComp from '../Components/MyComp/MyComp';
+import Spinner from '../Components/Spinner/Spinner';
 
 
 
@@ -69,6 +69,7 @@ const Auth = () => {
     // return success === "Admin" ? <AdminDashboard /> : (success === 'User' ? <UserDashboard /> : <Spinner text={`Unauthorized Access. Redirecting in ${time}`} />)
 
     return success ? <Outlet /> : <Spinner path={path} />
+    // return success ? <Outlet /> : <MyComp path={path} />
 
 }
 

@@ -24,7 +24,8 @@ const Spinner = ({
     }, [time]);
 
     return (
-        <div className="loader">
+        <div className="myLoader">
+            {/* NO ACCESS REDIRECTING */}
             <ReactLoading type="spin" color="black" />
             <h2>{text + " " + time}</h2>
         </div>
