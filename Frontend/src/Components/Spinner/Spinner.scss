@@ -2,7 +2,7 @@
 
 .myLoader {
     width: 100%;
-    height: 50vh;
+    min-height: calc(100vh-80px);
 
     @include md {
         left: 45vw;
